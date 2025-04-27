@@ -23,7 +23,7 @@
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #1a1f24; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #485664; /* Color for headings, subheadings and title throughout the website */
+  --heading-color: #000408; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #0ea2bd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
@@ -31,7 +31,7 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #485664;  /* The default color of the main navmenu links */
+  --nav-color: #000000;  /* The default color of the main navmenu links */
   --nav-hover-color: #0ea2bd; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
@@ -658,6 +658,7 @@ h6 {
   left: 0;
 }
 
+
 .footer .footer-links {
   margin-bottom: 30px;
 }
@@ -735,6 +736,28 @@ h6 {
 .footer .social-links a:hover {
   background: var(--accent-color);
   text-decoration: none;
+}
+.floating-emoji {
+  position:relative;
+  bottom: 10px;
+  right: 10px;
+  width: 80px;
+  animation: float 3s ease-in-out infinite;
+  z-index: 10;
+}
+
+.floating-emoji img {
+  width: 100%;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 /*--------------------------------------------------------------
@@ -932,9 +955,9 @@ section,
   height: 600px;
   min-height: 50vh;
   position: relative;
-  padding: 120px 0 60px 0;
+  padding: 10px 650px 130px 0;
   display: flex;
-  align-items: center;
+  align-items:left;
   background: url("../img/hero-bg-light.webp") center center;
   background-size: cover;
   color:var(--accent-color);
@@ -968,10 +991,10 @@ section,
   font-family:'Source Sans Pro' ;
   font-weight: 200;
   
-  color: #fff;
+  color: #ffffff;
 }
 .hero p {
-  color:#fff;
+  color:#ffffff;
 
   margin: 5px 0 -40px 0;
   font-size: 25px;
@@ -1071,6 +1094,7 @@ section,
   }
 }
 
+
 /*--------------------------------------------------------------
 # Featured Services Section
 --------------------------------------------------------------*/
@@ -1159,7 +1183,230 @@ section,
 .featured-servises .section-title.stretched-link{
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 100;
+}button {
+  position: relative;
+  padding: 12px 35px;
+  background: #0ea2bd;
+  font-size: 17px;
+  font-weight: 500;
+  color: #ffffff;
+  border: 3px solid #0ea2bd;
+  border-radius: 8px;
+  box-shadow: 0 0 0 #0ea2bd;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
+
+.star-1 {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #60ade0);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+}
+
+.star-2 {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #60ade0);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-3 {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #60ade0);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-4 {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #60ade0);
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-5 {
+  position: absolute;
+  top: 25%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #60ade0);
+  z-index: -5;
+  transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-6 {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #60ade0);
+  z-index: -5;
+  transition: all 0.8s ease;
+}
+
+button:hover {
+  background: transparent;
+  color: #2794a8;
+  box-shadow: 0 0 25px #a3f1f88c;
+}
+
+button:hover .star-1 {
+  position: absolute;
+  top: -80%;
+  left: -30%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #60ade0);
+  z-index: 2;
+}
+
+button:hover .star-2 {
+  position: absolute;
+  top: -25%;
+  left: 10%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #60ade0);
+  z-index: 2;
+}
+
+button:hover .star-3 {
+  position: absolute;
+  top: 55%;
+  left: 25%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #60ade0);
+  z-index: 2;
+}
+
+button:hover .star-4 {
+  position: absolute;
+  top: 30%;
+  left: 80%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #60ade0);
+  z-index: 2;
+}
+
+button:hover .star-5 {
+  position: absolute;
+  top: 25%;
+  left: 115%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #60ade0);
+  z-index: 2;
+}
+
+button:hover .star-6 {
+  position: absolute;
+  top: 5%;
+  left: 60%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #60ade0);
+  z-index: 2;
+}
+
+.fil0 {
+  fill: #fffdef;
+}
+.spline-floating-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none; /* Makes sure clicks pass through */
+  overflow: hidden;
+}
+
+.spline-floating-element iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+.Btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  /* overflow: hidden; */
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.svgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  letter-spacing: 0.8px;
+  border-radius: 10px;
+  transition: all .3s;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+}
+
+.BG {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background:  #1db5d0;
+  z-index: -1;
+  border-radius: 10px;
+  pointer-events: none;
+  transition: all .3s;
+}
+
+.Btn:hover .BG {
+  transform: rotate(35deg);
+  transform-origin: bottom;
+}
+
+.Btn:hover .svgContainer {
+  background-color: rgba(156, 156, 156, 0.466);
+  backdrop-filter: blur(4px);
+}
+
+.resume-btn:hover .star-1 { transform: translate(-5px, -5px) scale(1.2); }
+.resume-btn:hover .star-2 { transform: translate(5px, 5px) scale(1.1); }
+.resume-btn:hover .star-3 { transform: translate(-10px, 5px) scale(1.3); }
+.resume-btn:hover .star-4 { transform: translate(10px, -10px) scale(1.2); }
+.resume-btn:hover .star-5 { transform: translate(-5px, 10px) scale(1.1); }
+.resume-btn:hover .star-6 { transform: translate(5px, -5px) scale(1.2); }
 
 /*--------------------------------------------------------------
 # About Section
@@ -1168,6 +1415,13 @@ section,
   position: relative;
   margin: -30px 0 0 60px;
 }
+
+.about p {
+  color: rgb(0, 0, 0); /* Change paragraph color to grey */
+  word-spacing: 2px; /* Adjust word spacing */
+  line-height: 1.6; /* Improve readability */
+}
+
 .gallery-btn {
   display: inline-flex;
   align-items: center;
@@ -1725,6 +1979,83 @@ section,
   }
 }
 
+.card {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 14px;
+  z-index: 1111;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  transition: transform 0.3s ease-in-out; /* Smooth Zoom Effect */
+}
+
+.card:hover {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.bg {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 190px;
+  height: 240px;
+  z-index: 2;
+  background: rgba(255, 255, 255, .95);
+  backdrop-filter: blur(24px);
+  border-radius: 10px;
+  overflow: hidden;
+  outline: 2px solid white;
+}
+
+.blob {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #ff0000;
+  opacity: 1;
+  filter: blur(12px);
+  animation: blob-bounce 5s infinite ease;
+}
+
+img.service-icon {
+  width: 80px;
+  height: 80px;
+  z-index: 3;
+  transition: transform 0.3s ease-in-out; /* Smooth zoom effect for image */
+}
+
+.card:hover .service-icon {
+  transform: scale(1.2); /* Slight zoom effect on the image */
+}
+
+@keyframes blob-bounce {
+  0% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+  }
+  50% {
+    transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+  }
+  75% {
+    transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: translate(-100%, -100%) translate3d(0, 0, 0);
+  }
+}
+
+
 /*--------------------------------------------------------------
 # Pricing Section
 --------------------------------------------------------------*/
@@ -1941,6 +2272,26 @@ section,
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
+.portfolio .portfolio-item {
+  padding: 5px; /* Adjust space between images */
+}
+
+.portfolio .portfolio-content img {
+  border-radius: 10px; /* Optional: Adds rounded corners to images */
+  padding: 5px; /* Inner spacing within image container */
+}
+
+.portfolio .row {
+  margin: 0 auto; /* Centers the images properly */
+  gap: 15px; /* Adjusts spacing between the grid items */
+}
+
+@media (max-width: 768px) {
+  .portfolio .portfolio-item {
+      padding: 5px; /* Reduce spacing for smaller screens */
+  }
+}
+
 .portfolio .portfolio-filters {
   padding: 0;
   margin: 0 auto 20px auto;
@@ -2168,7 +2519,12 @@ section,
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   margin-top:0px;
+  margin-left: 20px;
 }
+#contact-form {
+  margin-left: 70px; /* Adjust as needed */
+}
+
 
 .contact h3{
   font-weight: 300;
